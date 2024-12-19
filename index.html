@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MSISDN Info</title>
+</head>
+<body>
+    <h1>MSISDN Information</h1>
+    <p id="msisdn"></p>
+    <script>
+        fetch('/msisdn')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('msisdn').innerText = `Extracted MSISDN: ${data}`;
+            })
+            .catch(error => console.error('Error fetching MSISDN:', error));
+    </script>
+</body>
+</html>
